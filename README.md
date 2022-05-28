@@ -29,9 +29,9 @@ Career Prospect System(CPS) is a search engine to match a job or career with job
    ![image](https://user-images.githubusercontent.com/93475397/169509516-3cf7e4b2-6e60-4080-952f-de54df69168a.png)
 
    * Import excel file 20.xlsx, change line 7 in init_db.py and line 55 in mysql_manager.py before import data. Then, run init_db.py.
-   Excel file(20.xlsx): https://docs.google.com/spreadsheets/d/12SNd5SPjdqzRXcoyg5_-0d0YlbJtTGQE/edit?usp=sharing&ouid=106666487931104475614&rtpof=true&sd=true
+   Excel file(20.xlsx): https://docs.google.com/spreadsheets/d/1OObAufBVpHCt_2N9RXcJFjr-nAoDT0_p/edit?usp=sharing&ouid=106666487931104475614&rtpof=true&sd=true
    
-   ![image](https://user-images.githubusercontent.com/93475397/169509741-150a577b-36ee-4152-927f-5feb69efcf11.png)
+   ![image](https://user-images.githubusercontent.com/93475397/170810353-762b6b84-27e4-4895-88d1-ca9f43dd9cbf.png)
    ![image](https://user-images.githubusercontent.com/93475397/169509623-7647b4de-2818-412b-8e77-786c6b220598.png)
 
    * Import excel file 21.xlsx, change line 7 in init_db.py and line 55 in mysql_manager.py before import data. Then, run init_db.py.
