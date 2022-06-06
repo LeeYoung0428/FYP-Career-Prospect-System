@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Match Job List</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#keywords').tablesorter();
+        });
+    </script>
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("keywords");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .container {
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .wrapper {
+            margin: 8px 0;
+            width: 100%;
+            text-align: center;
+        }
+        input {
+            width: 60%;
+            padding: 8px;
+            margin: 0 4px 0 0;
+            border: 1px solid #666;
+            border-radius: 5px;
+            height: 30px;
+            font-size: 15px;
+            font-family: "Ubuntu";
+        }
+
+   
+        .search {
+            flex: 2 1 auto;
+        }
+
+        .btn {
+            position: relative;
+            background: none;
+            color: #9dd4d0;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 0.2em solid #9dd4d0;
+            padding: 0.5em 1.2em;
+            font-family: "Ubuntu";
+        }
+
+        .btn::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10%;
+            background: #f6f9fb;
+            height: 0.3em;
+            right: 20%;
+            top: -0.21em;
+            transform: skewX(-45deg);
+            -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .btn::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10%;
+            background: #f6f9fb;
+            height: 0.3em;
+            left: 20%;
+            bottom: -0.25em;
+            transform: skewX(45deg);
+            -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+            transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .btn:hover::before {
+            right: 80%;
+        }
+
+        .btn:hover::after {
+            left: 80%;
+        }
+
+        .btn1 {
+            border-radius: 12px;
+            background-color: #6aa6ed;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 14px;
+            padding: 5px;
+            width: 150px;
+            height: 50px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            font-family: "Ubuntu";
+        }
+
+        #keywords {
+            width: 60%;
+            margin: 0 auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+
+        }
+
+        #keywords thead {
+            cursor: pointer;
+            background: #c9dff0;
+        }
+
+        #keywords thead tr th {
+            font-weight: bold;
+            padding: 12px 30px;
+            padding-left: 42px;
+            text-align: center;
+        }
+
+        #keywords thead tr th span {
+            padding-right: 20px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+        }
+
+        #keywords thead tr th.headerSortUp,
+        #keywords thead tr th.headerSortDown {
+            background: #acc8dd;
+        }
+
+        #keywords thead tr th.headerSortUp span {
+            background-image: url('https://i.imgur.com/SP99ZPJ.png');
+        }
+
+        #keywords thead tr th.headerSortDown span {
+            background-image: url('https://i.imgur.com/RkA9MBo.png');
+        }
+
+        #keywords tbody tr {
+            color: #555;
+        }
+
+        #keywords tbody tr td {
+            text-align: center;
+        }
+
+        #keywords tbody tr td.lalign {
+            text-align: center;
+        }
+
+        #keywords tbody tr td.lalignc {
+            text-align: 50px;
+        }
+
+        .box {
+            width: 100%;
+            text-align: center;
+        }
+
+        #myInput {
+            background-image: url('https://img.icons8.com/color/452/search--v1.png');
+            background-size: 35px 35px;
+            background-position: 5px 7px;
+            background-repeat: no-repeat;
+            width: 70%;
+            font-family: "Ubuntu";
+            font-size: 16px;
+            padding: 16px 20px 16px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .pagination-page-info {
+            padding: .6em;
+            padding-left: 0;
+            width: 40em;
+            margin: .5em;
+            margin-left: 0;
+            font-size: 12px;
+        }
+
+        .pagination-page-info b {
+            color: black;
+            background: #6aa6ed;
+            padding-left: 2px;
+            padding: .1em .25em;
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="font-size: 60px; text-align: center;">
+        Match Job List
+    </header>
+    
+    <p style="font-weight: bold; font-size: 30px;text-align: center;background-color:#ededee;">
+        Job Title : <a href="{{ joblink }}" ; target="_blank"> {{ jobname }} </a></b>
+    </p>
+    <div class="container">
+        <div class="wrapper">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Name" title="Type in a name">
+            <button class="btn1">
+                <a href="/job/match/{{id}}/show-in-pagination">
+                    Show in Pagination
+                </a>
+            </button>
+        </div>
+        <div>
+            <table id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th><span>Name</span></th>
+                        <th><span>Similarity</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in final_result %}
+                    <tr>
+                        <td class="lalignc"><a href="{{ row[2] }}" ; target="_blank">{{ row[0] }}</a></td>
+                        <td class="lalign">{{ row[1] }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

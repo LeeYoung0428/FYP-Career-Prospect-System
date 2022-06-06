@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Career Prospect System</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+
+        <style>
+
+            .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60%;
+                background: #000000;
+                text-align: center;
+            }
+    
+            .bottom {
+                position: fixed;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                height: 50%;
+                padding-top: 20px;
+                background: #a7d7ff;
+                text-align: center;
+            }
+    
+            .header h1 {
+
+                font-size: 500%;
+                position: fixed;
+                left: 0;
+                bottom: 20%;
+                width: 98%;
+                height: 50%;
+                color: rgb(255, 255, 255);
+            }
+    
+            .container {
+                width: 70%;
+                height: 10%;
+                background: #73d6ec;
+                margin: 0 auto;
+                padding: 20px;
+            }
+    
+            .container1 {
+                width: 100%;
+                height: 10%;
+                background: #73d6ec;
+                margin: 0 auto;
+                padding: 10px;
+                bottom: auto;
+            }
+    
+            p.ex1 {
+                color: black;
+                padding-top: 7%;
+            }
+    
+            .wrapper {
+                margin: 8px 0;
+            }
+    
+            input {
+                width: 60%;
+                padding: 8px;
+                margin: 0 4px 0 0;
+                border: 1px solid rgb(0, 0, 0);
+                border-radius: 5px;
+                height: 30px;
+                font-size: 15px;
+                font-family: "Times New Roman";
+            }
+    
+            .search {
+                flex: 2 1 auto;
+            }
+    
+    
+            .btn {
+                position: relative;
+                background: none;
+                color: #2e2f2f;
+                text-transform: uppercase;
+                text-decoration: none;
+                border: 0.2em solid #1b2121;
+                padding: 0.7em 1.4em;
+                font-family: "Ubuntu";
+                margin: 5px;
+            }
+    
+            .btn::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 10%;
+                background: a7d7ff;
+                height: 0.3em;
+                right: 20%;
+                top: -0.21em;
+                transform: skewX(-45deg);
+                -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+                transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+            }
+    
+            .btn::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 10%;
+                background: a7d7ff;
+                height: 0.3em;
+                left: 20%;
+                bottom: -0.25em;
+                transform: skewX(45deg);
+                -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+                transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+            }
+
+        .btn:hover::before {
+            right: 80%;
+        }
+
+        .btn:hover::after {
+            left: 80%;
+        }
+
+        .btn1 {
+            border-radius: 12px;
+            background-color: #d4b59d;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+            width: 120px;
+            height: 50px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            font-family: "Ubuntu";
+        }
+
+        .btn1 span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .btn1 span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .btn1:hover span {
+            padding-right: 25px;
+        }
+
+        .btn1:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1 style="font-family:verdana;"><b>Career Prospect System</b></h1>
+    </div>
+    <div class="bottom">
+            <form method="GET" action="{{ url_for('search') }}">
+                <div class="wrapper">
+                    <div>
+                        <input type="text" class="search" id="term" name="term" placeholder="Please enter a job" color="black">
+                        <!--<input type="text" class="search" placeholder="First Name">-->
+                        <button class="btn">
+                            SEARCH
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div><br>
+        <div class="container1">
+            <p class="ex1" style=>
+                <br><br><br><br>
+                &copy; 2022 Lee Young All Rights Reserved.
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Match Job List</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript"
+            src="http://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.9.1/jquery.tablesorter.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#keywords').tablesorter();
+        });
+    </script>
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("keywords");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <style>
+        #background1 {
+            position: absolute;
+            top: 0px;
+            left: 95%;
+            width: 5%;
+            height: 100%;
+            background-color: pink;
+        }
+
+        .container {
+            max-width: 10000px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 2px;
+            padding-right: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .wrapper {
+            margin: 8px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        input {
+            width: 50%;
+            padding: 16px 20px 16px 40px;
+            margin: 5px 5px 20px 5px;
+            border: 1px solid #666;
+            border-radius: 5px;
+            height: 50px;
+            font-size: 15px;
+            font-family: "Ubuntu";
+        }
+
+        .search {
+            flex: 2 1 auto;
+        }
+
+        .btn {
+            position: relative;
+            background: none;
+            color: #202020;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 0.2em solid #000000;
+            padding: 0.5em 1.2em;
+            font-family: "Ubuntu";
+            height: 50px;
+        }
+
+        .btn::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10%;
+            background: #f6f9fb;
+            height: 0.3em;
+            right: 20%;
+            top: -0.21em;
+            transform: skewX(-45deg);
+            -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .btn::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10%;
+            background: #f6f9fb;
+            height: 0.3em;
+            left: 20%;
+            bottom: -0.25em;
+            transform: skewX(45deg);
+            -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+            transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .btn:hover::before {
+            right: 80%;
+        }
+
+        .btn:hover::after {
+            left: 80%;
+        }
+
+        .btn1 {
+            border-radius: 12px;
+            background-color: #6aa6ed;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 14px;
+            padding: 5px;
+            width: 150px;
+            height: 50px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+            font-family: "Ubuntu";
+        }
+
+        #keywords {
+            width: 60%;
+            margin: 0 auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+
+        }
+
+        #keywords thead {
+            cursor: pointer;
+            background: #c9dff0;
+        }
+
+        #keywords thead tr th {
+            font-weight: bold;
+            padding: 15px 45px;
+            padding-left: 42px;
+            text-align: center;
+        }
+
+        #keywords thead tr th span {
+            padding-right: 20px;
+            background-repeat: no-repeat;
+            background-position: 100% 100%;
+        }
+
+        #keywords thead tr th.headerSortUp,
+        #keywords thead tr th.headerSortDown {
+            background: #acc8dd;
+        }
+
+        #keywords thead tr th.headerSortUp span {
+            background-image: url('https://i.imgur.com/SP99ZPJ.png');
+        }
+
+        #keywords thead tr th.headerSortDown span {
+            background-image: url('https://i.imgur.com/RkA9MBo.png');
+        }
+
+        #keywords tbody tr {
+            color: #555;
+        }
+
+        #keywords tbody tr td {
+            text-align: center;
+        }
+
+        #keywords tbody tr td.lalign {
+            text-align: center;
+        }
+
+        #keywords tbody tr td.lalignc {
+            text-align: center;
+        }
+
+        #keywords tbody tr td.lalignd {
+            text-align: center;
+        }
+
+        #keywords tbody tr td.laligne {
+            text-align: center;
+        }
+
+        #keywords tbody tr td.lalignf {
+            text-align: center;
+        }
+
+        .box {
+            width: 100%;
+            text-align: center;
+        }
+
+        .block {
+            background-color: #d0d0f0;
+            width: 30%;
+            padding: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        #myInput {
+            background-image: url('https://img.icons8.com/color/452/search--v1.png');
+            background-size: 35px 35px;
+            background-position: 5px 7px;
+            background-repeat: no-repeat;
+            width: 60%;
+            font-family: "Ubuntu";
+            font-size: 16px;
+            padding: 16px 20px 16px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .pagination-page-info {
+            padding: .6em;
+            padding-left: 0;
+            margin: 0 auto;
+            margin-left: 0;
+            font-size: 12px;
+            text-align: center;
+            font-family: "Ubuntu";
+        }
+
+        .pagination-page-info b {
+            color: black;
+            padding-left: 2px;
+            padding: .1em .25em;
+            font-size: 150%;
+        }
+    </style>
+</head>
+
+<body>
+<header style="font-size: 60px; text-align: center; font-weight: bold;">
+    Career Prospect System
+</header>
+<br>
+<p style="font-weight: bold; font-size: 50px;text-align: center; background-color:#ffffff;">
+    Match Job List</a></b>
+</p>
+<br>
+<div class="container">
+    <div class="wrapper">
+        <div class="search-container">
+            <form method="POST" action="/job/match/{{ id }}/show-in-pagination">
+                <input type="text" class="search" id="query" name="query" placeholder="Enter your query">
+                <button class="btn" type="submit" value="predict">Search</button>
+            </form>
+        </div>
+        <div class="block">
+            <form method="GET" action="/job/match/{{ id }}/show-in-pagination">
+                <label for="entries">Show entries:</label>
+                <select id="entries" name="entries">
+                    <option value="none" selected disabled hidden>
+                        Select
+                    </option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="all">All</option>
+                </select>
+                <input type="submit" value="SUBMIT" style="color: white;background-color: #295185;">
+            </form>
+        </div>
+    </div>
+{% if message != "" %}
+    <div class="alert alert-danger text-center" style="color: rgb(0, 0, 0);;background-color: #fe3f3f; font-size: 30px; text-align: center;">{{ message }}</div>
+{% endif %}
+    <div>
+        <div class="box">
+            {{ pagination.info }}
+        </div>
+
+        <table id="keywords" cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <th><span>Job Candidate</span></th>
+                <th><span>Number of the Document</span></th>
+                <th><span>University</span></th>
+                <th><span>Average Similarity(Job Matching Rate)</span></th>
+                <th><span>Average Similarity Graph</span></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for row in dataa %}
+                <tr>
+                    <td class="lalignc">{{ row[1] }}</td>
+                    <td class="lalignc">{{ row[3] }}</td>
+                    <td class="lalignc">{{ row[2] }}</td>
+                    <td class="lalignc">{{ row[4] }}</td>
+                    <td class="laligne"><img id="bigpic"
+                                             src="{{ url_for('visualize', author = row[1]+' Average Similarity', heights = row[5]) }}"
+                                             width="350" height="300"></td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="box">
+            {{ pagination.links }}
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
